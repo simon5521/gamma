@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated logicFunction -->
+      <package
+            uri="http://www.mit.bme.hu/gamma/logical/logicFunction/Model"
+            class="hu.bme.mit.gamma.logical.logicFunction.model.ModelPackage"
+            genModel="model/logicFunction.genmodel"/>
+   </extension>
+
+</plugin>

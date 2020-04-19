@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.gamma.logical.logicBase.model/src"
+    modelPluginID="hu.bme.mit.gamma.logical.logicBase.model" modelName="LogicBase"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>logicBase.ecore</foreignModel>
+  <genPackages prefix="Model" basePackage="hu.bme.mit.gamma.logical.logicBase" disposableProviderFactory="true"
+      ecorePackage="logicBase.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="logicBase.ecore#//EventDirection">
+      <genEnumLiterals ecoreEnumLiteral="logicBase.ecore#//EventDirection/IN"/>
+      <genEnumLiterals ecoreEnumLiteral="logicBase.ecore#//EventDirection/OUT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="logicBase.ecore#//ValueType">
+      <genEnumLiterals ecoreEnumLiteral="logicBase.ecore#//ValueType/INTEGER"/>
+    </genEnums>
+    <genClasses ecoreClass="logicBase.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logicBase.ecore#//Event/direction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logicBase.ecore#//Event/extraValueType"/>
+    </genClasses>
+    <genClasses ecoreClass="logicBase.ecore#//LogicInterfaceSpecification">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logicBase.ecore#//LogicInterfaceSpecification/events"/>
+    </genClasses>
+    <genClasses ecoreClass="logicBase.ecore#//LogicalDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logicBase.ecore#//LogicalDiagram/interfaces"/>
+    </genClasses>
+    <genClasses ecoreClass="logicBase.ecore#//Predicate">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logicBase.ecore#//Predicate/listens"/>
+    </genClasses>
+    <genClasses ecoreClass="logicBase.ecore#//NamedObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logicBase.ecore#//NamedObject/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

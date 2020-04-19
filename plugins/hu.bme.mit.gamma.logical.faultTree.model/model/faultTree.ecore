@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://www.mit.bme.hu/gamma/logical/faultTree/Model"
+    nsPrefix="hu.bme.mit.gamma.logical.faultTree.model">
+  <eClassifiers xsi:type="ecore:EClass" name="Subtree" abstract="true" eSuperTypes="../../hu.bme.mit.gamma.logical.logicBase.model/model/logicBase.ecore#//NamedObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ANDGate" eSuperTypes="#//ComplexSubtree"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ORGate" eSuperTypes="#//ComplexSubtree"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicEvent" eSuperTypes="#//Subtree">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="raisingPredicate" eType="ecore:EClass ../../hu.bme.mit.gamma.logical.logicBase.model/model/logicBase.ecore#//Predicate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexSubtree" abstract="true" eSuperTypes="#//Subtree">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//Subtree"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SEQUENCEGate" eSuperTypes="#//ComplexSubtree"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FaultTreeDiagram" eSuperTypes="../../hu.bme.mit.gamma.logical.logicBase.model/model/logicBase.ecore#//LogicalDiagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="topEventTree" upperBound="-1"
+        eType="#//Subtree" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

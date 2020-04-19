@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/hu.bme.mit.gamma.logical.logicFunction.model/src"
+    modelPluginID="hu.bme.mit.gamma.logical.logicFunction.model" modelName="LogicFunction"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" usedGenPackages="../../hu.bme.mit.gamma.logical.logicBase.model/model/logicBase.genmodel#//model"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>logicFunction.ecore</foreignModel>
+  <genPackages prefix="Model" basePackage="hu.bme.mit.gamma.logical.logicFunction"
+      disposableProviderFactory="true" ecorePackage="logicFunction.ecore#/">
+    <genClasses image="false" ecoreClass="logicFunction.ecore#//Expression"/>
+    <genClasses image="false" ecoreClass="logicFunction.ecore#//Formula"/>
+    <genClasses ecoreClass="logicFunction.ecore#//AND"/>
+    <genClasses ecoreClass="logicFunction.ecore#//OR"/>
+    <genClasses ecoreClass="logicFunction.ecore#//PredicateListen">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logicFunction.ecore#//PredicateListen/listens"/>
+    </genClasses>
+    <genClasses ecoreClass="logicFunction.ecore#//Rule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logicFunction.ecore#//Rule/expression"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logicFunction.ecore#//Rule/raises"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="logicFunction.ecore#//Atomic"/>
+    <genClasses ecoreClass="logicFunction.ecore#//RuleListen">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logicFunction.ecore#//RuleListen/listens"/>
+    </genClasses>
+    <genClasses ecoreClass="logicFunction.ecore#//LogicFunctionDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logicFunction.ecore#//LogicFunctionDiagram/rule"/>
+    </genClasses>
+    <genClasses ecoreClass="logicFunction.ecore#//NOT"/>
+    <genClasses ecoreClass="logicFunction.ecore#//XOR"/>
+    <genClasses ecoreClass="logicFunction.ecore#//ComplexFormula">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logicFunction.ecore#//ComplexFormula/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="logicFunction.ecore#//UnaryFormula">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logicFunction.ecore#//UnaryFormula/argument"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

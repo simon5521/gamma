@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://www.mit.bme.hu/gamma/logical/logicBase/Model"
+    nsPrefix="hu.bme.mit.gamma.logical.logicBase.model">
+  <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//NamedObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" lowerBound="1"
+        eType="#//EventDirection"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extraValueType" eType="#//ValueType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EventDirection">
+    <eLiterals name="IN"/>
+    <eLiterals name="OUT" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicInterfaceSpecification" eSuperTypes="#//NamedObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+        eType="#//Event" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicalDiagram" eSuperTypes="#//NamedObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaces" upperBound="-1"
+        eType="#//LogicInterfaceSpecification" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Predicate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listens" lowerBound="1"
+        eType="#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ValueType">
+    <eLiterals name="INTEGER"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

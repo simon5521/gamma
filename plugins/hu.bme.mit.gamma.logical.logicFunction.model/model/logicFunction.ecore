@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://www.mit.bme.hu/gamma/logical/logicFunction/Model"
+    nsPrefix="hu.bme.mit.gamma.logical.logicFunction.model">
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Formula" abstract="true" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AND" eSuperTypes="#//ComplexFormula"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OR" eSuperTypes="#//ComplexFormula"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PredicateListen" eSuperTypes="#//Atomic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listens" lowerBound="1"
+        eType="ecore:EClass ../../hu.bme.mit.gamma.logical.logicBase.model/model/logicBase.ecore#//Predicate"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule" eSuperTypes="../../hu.bme.mit.gamma.logical.logicBase.model/model/logicBase.ecore#//NamedObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="raises" eType="ecore:EClass ../../hu.bme.mit.gamma.logical.logicBase.model/model/logicBase.ecore#//Event"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Atomic" abstract="true" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RuleListen" eSuperTypes="#//Atomic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listens" eType="#//Rule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicFunctionDiagram" eSuperTypes="../../hu.bme.mit.gamma.logical.logicBase.model/model/logicBase.ecore#//LogicalDiagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" upperBound="-1" eType="#//Rule"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NOT" eSuperTypes="#//UnaryFormula"/>
+  <eClassifiers xsi:type="ecore:EClass" name="XOR" eSuperTypes="#//ComplexFormula"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexFormula" abstract="true" eSuperTypes="#//Formula">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" lowerBound="1"
+        upperBound="-1" eType="#//Expression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryFormula" abstract="true" eSuperTypes="#//Formula">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="argument" lowerBound="1"
+        eType="#//Expression" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>
